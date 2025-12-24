@@ -1,8 +1,8 @@
-export default [
+module.exports = [
   {
     languageOptions: {
       ecmaVersion: "latest",
-      sourceType: "module",
+      sourceType: "script",
     },
     rules: {},
   },
