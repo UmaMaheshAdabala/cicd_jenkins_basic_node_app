@@ -1,7 +1,7 @@
 pipeline{
     agent {
         docker {
-            image 'node:18'
+            image 'docker:27-cli'
              args '-v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/jenkins/.npm:/home/node/.npm'
         }
     }
@@ -16,6 +16,16 @@ pipeline{
                 // git 'https://github.com/UmaMaheshAdabala/cicd_jenkins_basic_node_app.git'
             }
         }
+        stage('Setup Node') {
+            steps {
+                sh '''
+                apk add --no-cache nodejs npm
+                node -v
+                npm -v
+                '''
+            }
+        }
+
         stage('Install Dependencies'){
             steps{
                  sh '''
