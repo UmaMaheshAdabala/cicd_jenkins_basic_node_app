@@ -16,11 +16,6 @@ pipeline{
                 // git 'https://github.com/UmaMaheshAdabala/cicd_jenkins_basic_node_app.git'
             }
         }
-        stage('Configure npm') {
-            steps {
-                sh 'npm config set cache /home/node/.npm --global'
-            }
-        }
         stage('Install Dependencies'){
             steps{
                  sh '''
