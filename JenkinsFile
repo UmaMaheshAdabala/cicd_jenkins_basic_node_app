@@ -12,7 +12,8 @@ pipeline{
     stages{
         stage('Checkout'){
             steps{
-                git 'https://github.com/UmaMaheshAdabala/cicd_jenkins_basic_node_app.git'
+                sh 'echo "checkout completed" '
+                // git 'https://github.com/UmaMaheshAdabala/cicd_jenkins_basic_node_app.git'
             }
         }
         stage('Install Dependencies'){
