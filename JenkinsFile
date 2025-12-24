@@ -47,8 +47,10 @@ pipeline{
             }
         }
         stage('push'){
-            sh 'docker tag myapp:latest $IAMEGE:latest'
-            sh 'docker push $IAMEGE:latest'
+            steps {
+                sh 'docker tag myapp:latest $IAMEGE:latest'
+                sh 'docker push $IAMEGE:latest'
+            }
         }
     }
 }
