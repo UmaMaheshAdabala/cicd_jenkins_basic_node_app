@@ -23,7 +23,10 @@ pipeline{
         }
         stage('Install Dependencies'){
             steps{
-                sh 'npm install'
+                 sh '''
+                    export NPM_CONFIG_CACHE=/home/node/.npm
+                    npm install
+                '''
             }
         }
         stage('test'){
